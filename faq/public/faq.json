@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "question": "What is React?",
+        "answer": "React is a JavaScript library for building user interfaces."
+    },
+    {
+        "id": 2,
+        "question": "How do you use React?",
+        "answer": "You use React by creating components."
+    },
+    {
+        "id": 3,
+        "question": "What is a component?",
+        "answer": "A component is a reusable piece of UI."
+    },
+    {
+        "id": 4,
+        "question": "What is JSX?",
+        "answer": "JSX is a syntax extension for JavaScript that looks similar to XML or HTML."
+    },
+    {
+        "id": 5,
+        "question": "What are props?",
+        "answer": "Props are inputs to components. They are single values or objects containing a set of values."
+    },
+    {
+        "id": 6,
+        "question": "What is state?",
+        "answer": "State is a built-in object that is used to contain data or information about the component."
+    },
+    {
+        "id": 7,
+        "question": "What is the virtual DOM?",
+        "answer": "The virtual DOM is a lightweight representation of the real DOM used in React."
+    },
+    {
+        "id": 8,
+        "question": "How do you create a React app?",
+        "answer": "You create a React app using Create React App, a CLI tool for quickly setting up a new React project."
+    },
+    {
+        "id": 9,
+        "question": "What is Redux?",
+        "answer": "Redux is a state management library for JavaScript apps, often used with React."
+    },
+    {
+        "id": 10,
+        "question": "What are hooks?",
+        "answer": "Hooks are functions that let you use state and other React features in functional components."
+    }
+]
