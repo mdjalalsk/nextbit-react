@@ -4,51 +4,49 @@ import Accordion from "./components/Accordion";
 
 function App() {
   const [faqData, setFaqData] = useState([]);
+  const [showFaq, setShowFaq] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-  const [searchResult, setSearchResult] = useState(faqData);
-  const [showAll, setShowAll] = useState(true);
+  const [searchResult, setSearchResult] = useState(showFaq);
+  const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
     const faq = async () => {
       try {
         const res = await fetch("/faq.json");
         const data = await res.json();
-
-        if (showAll) {
-          const res = data.slice(0, 4);
-          // console.log(res)
-          setFaqData(res);
-        } else {
-          setFaqData(data);
-        }
+        setFaqData(data);
+        setShowFaq(data.slice(0, 4));
       } catch (err) {
         console.error(err);
       }
     };
     faq();
-  }, [showAll]);
+  }, []);
 
   const handleSearchText = (event) => {
-    setSearchValue(event.target.value);
     setShowAll(false);
+    setSearchValue(event.target.value);
   };
   const handleShow = () => {
- 
-    setShowAll(false);
+    if (!showAll && searchResult.length > 4) {
+      setShowFaq(searchResult);
+    } else if (showAll && searchResult.length <= 4) {
+      setShowFaq(searchResult.slice(0, 4));
+    } else if (!showAll) {
+      setShowFaq(faqData);
+    } else {
+      setShowFaq(faqData.slice(0, 4));
+    }
+    setShowAll(!showAll);
   };
-
   const handleSearch = (event) => {
     event.preventDefault();
     const filteredData = faqData.filter((item) =>
       item.question.toLowerCase().includes(searchValue.toLowerCase())
     );
     setSearchResult(filteredData);
-    
-    
-
+    setShowFaq(filteredData.slice(0, 4));
   };
-
-
   return (
     <>
       <div className="container mx-auto ">
@@ -70,10 +68,11 @@ function App() {
             </div>
           </form>
           <div className="py-3">
-            <Accordion data={searchValue ? searchResult : faqData} />
+            {/* <Accordion data={searchValue ? searchResult : faqData} /> */}
+            <Accordion data={showFaq} />
           </div>
           <div className="text-center">
-            {showAll && (
+            {!showAll && (
               <button
                 className="my-4 py-2 px-4 bg-blue-500 text-white rounded-md "
                 onClick={handleShow}
