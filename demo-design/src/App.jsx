@@ -3,7 +3,7 @@ import SideBar from "./Components/SideBar.jsx";
 import {useEffect, useState} from "react";
 import Footer from "./Components/Footer.jsx";
 const navArray=[
-    "Home","About","Blog","Contact",
+    "Home","About","Blog","Reports","Contact",
 ]
 function App() {
 const [navs,setNavs]=useState([]);

@@ -26,7 +26,7 @@ const NavBar = ({navs}) => {
                             { items}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost text-xl">ReactJs</a>
                     <input type="text" placeholder="Type here" className="input input-bordered w-full hidden md:block"/>
 
                 </div>
