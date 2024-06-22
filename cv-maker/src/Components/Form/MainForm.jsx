@@ -86,8 +86,8 @@ const MainForm = ({onSubmit}) => {
             occupation: '',
             currentAddress: '',
             permanentAddress: '',
-            gender: '',
-            maritalStatus: ''
+            gender: 'male',
+            maritalStatus: 'unmarried'
         },
         educations: [
             { id: 1, institutionName: '', examName: '', passingYear: '', result: '' }
@@ -152,6 +152,8 @@ const MainForm = ({onSubmit}) => {
                     </aside>
                     <aside className="">
                         <div>
+                            <h1 className="text-xl font-bold text-center my-6">Educational Information
+                            </h1>
                             {formData.educations.map((edu, index) => (
                                 <div key={edu.id}>
                                     <EducationsInformations
@@ -172,6 +174,8 @@ const MainForm = ({onSubmit}) => {
                             </button>
                         </div>
                         <div>
+                            <h1 className="text-xl font-bold text-center my-6">Experience
+                            </h1>
                             {formData.experiences.map((exp, index) => (
                                 <div key={exp.id}>
                                     <Experience

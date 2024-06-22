@@ -17,7 +17,6 @@ const Experience = ({index, experience, onChange}) => {
     };
     return (
         <div className="flex flex-col items-center gap-y-3">
-            <label>Experience</label>
             <input
                 type="text"
                 placeholder="Enter Company Name"

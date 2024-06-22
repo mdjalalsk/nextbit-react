@@ -6,7 +6,6 @@ const EducationsInformations = ({index, education, onChange}) => {
     return (
         <>
             <div className="flex flex-col items-center gap-y-3">
-                <label>Last Educational Information</label>
                 <input
                     type="text"
                     placeholder="Enter Institution Name"

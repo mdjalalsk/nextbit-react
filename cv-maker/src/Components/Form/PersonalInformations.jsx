@@ -60,8 +60,8 @@ const PersonalInformations = ({onChange,formData}) => {
                     id="male"
                     name="gender"
                     value="male"
+                    checked
                     className="radio radio-primary"
-                    checked={formData.gender === 'male'} // Handle checked based on formData
                     onChange={handleInputChange}
                 />
                 <label htmlFor="female">Female</label>
@@ -71,7 +71,6 @@ const PersonalInformations = ({onChange,formData}) => {
                     name="gender"
                     value="female"
                     className="radio radio-primary"
-                    checked={formData.gender === 'female'} // Handle checked based on formData
                     onChange={handleInputChange}
                 />
                 <label htmlFor="other">Other</label>
@@ -81,7 +80,6 @@ const PersonalInformations = ({onChange,formData}) => {
                     name="gender"
                     value="other"
                     className="radio radio-primary"
-                    checked={formData.gender === 'other'} // Handle checked based on formData
                     onChange={handleInputChange}
                 />
             </div>
@@ -94,7 +92,7 @@ const PersonalInformations = ({onChange,formData}) => {
                     name="maritalStatus"
                     value="married"
                     className="radio radio-primary"
-                    checked={formData.maritalStatus === 'married'}
+
                     onChange={handleInputChange}
                 />
                 <label htmlFor="unmarried">Unmarried</label>
@@ -104,7 +102,7 @@ const PersonalInformations = ({onChange,formData}) => {
                     name="maritalStatus"
                     value="unmarried"
                     className="radio radio-primary"
-                    checked={formData.maritalStatus === 'unmarried'}
+                    checked
                     onChange={handleInputChange}
                 />
             </div>
