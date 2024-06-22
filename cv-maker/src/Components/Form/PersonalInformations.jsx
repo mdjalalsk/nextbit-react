@@ -1,50 +1,113 @@
-const PersonalInformations = () => {
+const PersonalInformations = ({onChange,formData}) => {
+    const handleInputChange = (e) => {
+        onChange(e); // Call the onChange function passed from parent
+    };
     return (<>
         <div className="flex flex-col items-center gap-y-3">
-            <label className="text-lg">Personal Informations</label>
-            <input type="text" placeholder="Enter your name" name="name"
-                   className="input input-bordered input-primary w-full max-w-xs"/>
-            <input type="email" placeholder="Enter your email" name="email"
-                   className="input input-bordered input-primary w-full max-w-xs"/>
-            <input type="text" placeholder="Enter your Phone" name="age"
-                   className="input input-bordered input-primary w-full max-w-xs"/>
-            <input type="number" placeholder="Enter your age" name="phone"
-                   className="input input-bordered input-primary w-full max-w-xs"/>
-            <input type="occupation" placeholder="Enter your Occupation" name="occupation"
-                   className="input input-bordered input-primary w-full max-w-xs"/>
-
-                <textarea className="textarea textarea-primary w-full max-w-xs" name="currebt_address"
-                          placeholder="Enter your current address"></textarea>
-
-
-                <textarea className="textarea textarea-primary w-full max-w-xs" name="permanent_address"
-                          placeholder="Enter your Permanent address"></textarea>
-
-
+            <label className="text-lg">Personal Information</label>
+            <input
+                type="text"
+                placeholder="Enter your name"
+                name="name"
+                className="input input-bordered input-primary w-full max-w-xs"
+                onChange={handleInputChange}
+            />
+            <input
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                className="input input-bordered input-primary w-full max-w-xs"
+                onChange={handleInputChange}
+            />
+            <input
+                type="text"
+                placeholder="Enter your Phone"
+                name="phone"
+                className="input input-bordered input-primary w-full max-w-xs"
+                onChange={handleInputChange}
+            />
+            <input
+                type="number"
+                placeholder="Enter your age"
+                name="age"
+                className="input input-bordered input-primary w-full max-w-xs"
+                onChange={handleInputChange}
+            />
+            <input
+                type="text"
+                placeholder="Enter your Occupation"
+                name="occupation"
+                className="input input-bordered input-primary w-full max-w-xs"
+                onChange={handleInputChange}
+            />
+            <textarea
+                className="textarea textarea-primary w-full max-w-xs"
+                name="currentAddress"
+                placeholder="Enter your current address"
+                onChange={handleInputChange}
+            ></textarea>
+            <textarea
+                className="textarea textarea-primary w-full max-w-xs"
+                name="permanentAddress"
+                placeholder="Enter your Permanent address"
+                onChange={handleInputChange}
+            ></textarea>
             <div className="flex items-center justify-start gap-x-2 max-w-xs">
-                <label>Gander:</label>
+                <label>Gender:</label>
                 <label htmlFor="male">Male</label>
-                <input type="radio" id="male" name="gender" value="male" className="radio radio-primary" checked/>
-
+                <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    className="radio radio-primary"
+                    checked={formData.gender === 'male'} // Handle checked based on formData
+                    onChange={handleInputChange}
+                />
                 <label htmlFor="female">Female</label>
-                <input type="radio" id="female" name="gender" value="female" className="radio radio-primary"/>
-
+                <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    className="radio radio-primary"
+                    checked={formData.gender === 'female'} // Handle checked based on formData
+                    onChange={handleInputChange}
+                />
                 <label htmlFor="other">Other</label>
-                <input type="radio" id="other" name="gender" value="other" className="radio radio-primary"/>
+                <input
+                    type="radio"
+                    id="other"
+                    name="gender"
+                    value="other"
+                    className="radio radio-primary"
+                    checked={formData.gender === 'other'} // Handle checked based on formData
+                    onChange={handleInputChange}
+                />
             </div>
             <div className="flex items-center justify-start gap-x-2 max-w-xs">
                 <label>Marital Status:</label>
                 <label htmlFor="married"> Married</label>
-                <input type="radio" id="married" name="marital_status" value="married" className="radio radio-primary"
-                       checked/>
-
-                <label htmlFor="unmarried">Female</label>
-                <input type="radio" id="unmarried" name="marital_status" value="unmarried"
-                       className="radio radio-primary"/>
-
+                <input
+                    type="radio"
+                    id="married"
+                    name="maritalStatus"
+                    value="married"
+                    className="radio radio-primary"
+                    checked={formData.maritalStatus === 'married'}
+                    onChange={handleInputChange}
+                />
+                <label htmlFor="unmarried">Unmarried</label>
+                <input
+                    type="radio"
+                    id="unmarried"
+                    name="maritalStatus"
+                    value="unmarried"
+                    className="radio radio-primary"
+                    checked={formData.maritalStatus === 'unmarried'}
+                    onChange={handleInputChange}
+                />
             </div>
-
-
         </div>
     </>);
 };
