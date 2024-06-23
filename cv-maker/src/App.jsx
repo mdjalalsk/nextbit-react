@@ -8,7 +8,8 @@ const navItems=["Home","Contact","About Us"];
 function App() {
 const [navs,setNavs]=useState(navItems);
     const [formData, setFormData] = useState(null);
-    console.log(formData);
+    // console.log(formData?.personalInfo?.name);
+    let cvMakerName=formData?.personalInfo?.name;
     const handleFormSubmit = (data) => {
         setFormData(data);
     };
@@ -16,8 +17,11 @@ const [navs,setNavs]=useState(navItems);
 console.log(navs);
   return (
    <div className="container mx-auto px-4">
-       <Navbar navs={navs}/>
-       <ViewCv></ViewCv>
+       <Navbar navs={navs} name={cvMakerName}/>
+       {
+           formData &&  <ViewCv data={formData}></ViewCv>
+       }
+
        <MainForm onSubmit={handleFormSubmit}/>
        <Footer/>
    </div>

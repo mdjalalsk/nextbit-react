@@ -191,6 +191,7 @@ const MainForm = ({onSubmit}) => {
                                     </button>
                                 </div>
                             ))}
+
                             <button type="button" onClick={() => dispatch({ type: actionTypes.ADD_EXPERIENCE })}>
                                 Add Experience
                             </button>

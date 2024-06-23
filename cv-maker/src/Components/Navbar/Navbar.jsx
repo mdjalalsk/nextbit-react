@@ -1,6 +1,6 @@
 
 
-const Navbar = ({navs}) => {
+const Navbar = ({navs ,name}) => {
     const navItems=<>
     {
         navs.map((item,index)=>(
@@ -24,7 +24,7 @@ const Navbar = ({navs}) => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 bg-white text-black
                             w-40">
                             {navItems}
-                            <li className="text-lg font-semibold "><a>Jalal</a></li>
+                            <li className="text-lg font-semibold "><a>{name? name:"Jalal"}</a></li>
                             <li>
                                 <div className="avatar">
                                     <div className="w-12 rounded-full">
@@ -41,7 +41,7 @@ const Navbar = ({navs}) => {
                 <div className="navbar-end">
                     <ul className="menu menu-horizontal px-1 hidden lg:flex items-center">
                         {navItems}
-                        <li className="text-lg font-semibold "><a>Jalal</a></li>
+                        <li className="text-lg font-semibold "><a>{name? name:"Jalal"}</a></li>
                         <li>
                             <div className="avatar">
                             <div className="w-12 rounded-full">
